@@ -441,6 +441,11 @@
             return function (fn) {
                 return self.isSome() ? fn(self.val) : defaultValue
             }
+        },
+        forEach: function(sideEffectFn) {
+            if (this.isSome()) {
+                sideEffectFn(this.val)
+            }
         }
     };
 
